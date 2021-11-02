@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 const PlayerForm = (props) => {
   const [player, setPlayer] = useState(() => {
     return {
-      playerName: props.player ? props.player.playerName : "",
+      name: props.player ? props.player.name : "",
     };
   });
 
@@ -26,7 +26,7 @@ const PlayerForm = (props) => {
     if (allFieldsFilled) {
       const currentPlayer = {
         id: uuidv4(),
-        playerName,
+        name: playerName,
         date: new Date(),
       };
       props.handleOnSubmit(currentPlayer);
