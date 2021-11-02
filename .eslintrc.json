@@ -78,7 +78,6 @@
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
         "indent": "off",
-        "init-declarations": "error",
         "jsx-quotes": [
             "error",
             "prefer-double"
