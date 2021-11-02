@@ -21,15 +21,9 @@
     ],
     "rules": {
         "accessor-pairs": "error",
-        "array-bracket-newline": "error",
         "array-bracket-spacing": "error",
         "array-callback-return": "error",
-        "array-element-newline": "error",
         "arrow-body-style": "error",
-        "arrow-parens": [
-            "error",
-            "as-needed" 
-        ],
         "arrow-spacing": [
             "error",
             {
@@ -142,7 +136,6 @@
         "no-extend-native": "error",
         "no-extra-bind": "error",
         "no-extra-label": "error",
-        "no-extra-parens": "error",
         "no-floating-decimal": "error",
         "no-implicit-coercion": "error",
         "no-implicit-globals": "error",
