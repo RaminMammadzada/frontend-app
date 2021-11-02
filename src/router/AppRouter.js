@@ -36,7 +36,16 @@ const AppRouter = () => {
               )}
               path="/add"
             />
-            <Route path="/edit/:id" component={EditPlayer} />
+            <Route
+              render={(props) => (
+                <EditPlayer
+                  {...props}
+                  players={players}
+                  setPlayers={setPlayers}
+                />
+              )}
+              path="/edit/:id"
+            />
             <Route component={() => <Redirect to="/" />} />
           </Switch>
         </div>
