@@ -15,7 +15,17 @@ const AppRouter = () => {
         <Header />
         <div className="main-content">
           <Switch>
-            <Route path="/" component={PlayersList} exact={true} />
+            <Route
+              render={(props) => (
+                <PlayersList
+                  {...props}
+                  players={players}
+                  setPlayers={setPlayers}
+                />
+              )}
+              path="/"
+              exact={true}
+            />
             <Route
               render={(props) => (
                 <AddPlayer
