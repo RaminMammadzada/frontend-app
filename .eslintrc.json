@@ -23,7 +23,6 @@
         "accessor-pairs": "error",
         "array-bracket-spacing": "error",
         "array-callback-return": "error",
-        "arrow-body-style": "error",
         "arrow-spacing": [
             "error",
             {
@@ -37,7 +36,6 @@
         "camelcase": "error",
         "capitalized-comments": "off",
         "class-methods-use-this": "error",
-        "comma-dangle": "error",
         "comma-spacing": [
             "error",
             {
@@ -105,7 +103,6 @@
         "max-depth": "error",
         "max-len": "error",
         "max-lines": "error",
-        "max-lines-per-function": "error",
         "max-nested-callbacks": "error",
         "max-params": "error",
         "max-statements": "error",
@@ -209,7 +206,6 @@
         ],
         "object-property-newline": "error",
         "object-shorthand": "error",
-        "one-var": "error",
         "one-var-declaration-per-line": "error",
         "operator-assignment": "error",
         "operator-linebreak": "error",
@@ -227,7 +223,6 @@
         "prefer-rest-params": "error",
         "prefer-spread": "error",
         "prefer-template": "error",
-        "quote-props": "error",
         "radix": "error",
         "require-atomic-updates": "error",
         "require-await": "error",
@@ -240,8 +235,6 @@
             "error",
             "last"
         ],
-        "sort-keys": "error",
-        "sort-vars": "error",
         "space-before-blocks": "error",
         "space-before-function-paren": "off",
         "space-in-parens": [
