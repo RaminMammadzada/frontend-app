@@ -1,9 +1,8 @@
 import React from "react";
 
-const PlayerForm = (props) => (
+const PlayerForm = () => (
   <div>
-    <p> there will be form here </p>
-    <p>{props}</p>
+    <p> add/edit player form </p>
   </div>
 );
 
