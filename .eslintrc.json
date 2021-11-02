@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -244,6 +245,7 @@
         "require-await": "error",
         "require-unicode-regexp": "off",
         "rest-spread-spacing": "error",
+        "react/react-in-jsx-scope": "off",
         "semi": "error",
         "semi-spacing": "error",
         "semi-style": [
