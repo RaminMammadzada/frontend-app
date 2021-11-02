@@ -4,21 +4,35 @@ import AddPlayer from "../components/AddPlayer";
 import Header from "../components/Header";
 import PlayersList from "../components/PlayersList";
 import EditPlayer from "../components/EditPlayer";
+import useLocalStorage from "../customHooks/useLocalStorage";
 
-const AppRouter = () => (
-  <BrowserRouter>
-    <div>
-      <Header />
-      <div className="main-content">
-        <Switch>
-          <Route path="/" component={PlayersList} exact={true} />
-          <Route path="/add" component={AddPlayer} />
-          <Route path="/edit/:id" component={EditPlayer} />
-          <Route component={() => <Redirect to="/" />} />
-        </Switch>
+const AppRouter = () => {
+  const [players, setPlayers] = useLocalStorage("players", []);
+
+  return (
+    <BrowserRouter>
+      <div>
+        <Header />
+        <div className="main-content">
+          <Switch>
+            <Route path="/" component={PlayersList} exact={true} />
+            <Route
+              render={(props) => (
+                <AddPlayer
+                  {...props}
+                  players={players}
+                  setPlayers={setPlayers}
+                />
+              )}
+              path="/add"
+            />
+            <Route path="/edit/:id" component={EditPlayer} />
+            <Route component={() => <Redirect to="/" />} />
+          </Switch>
+        </div>
       </div>
-    </div>
-  </BrowserRouter>
-);
+    </BrowserRouter>
+  );
+};
 
 export default AppRouter;
