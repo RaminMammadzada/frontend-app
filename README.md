@@ -59,7 +59,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Unit tests
 
-Clone the repo by typing
+Testing is not done yet for the project, though after it is done you can type the following command to test.
 
 ```
 npm run test
