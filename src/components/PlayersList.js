@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import _ from "lodash";
 import Player from "./Player";
 import { useDispatch, useSelector } from "react-redux";
-import { GetAllPlayers } from "../redux/actions/playerActions";
+import {
+  DeletePlayer as deletePlayer,
+  GetAllPlayers as getAllPlayers,
+} from "../redux/actions/playerActions";
 
 // eslint-disable-next-line react/prop-types
 const PlayersList = () => {
@@ -11,13 +14,14 @@ const PlayersList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(GetAllPlayers());
+    dispatch(getAllPlayers());
   }, []);
 
   const handleRemovePlayer = (id) => {
     console.log(`User with id: ${id} is about to be deleted.`);
     // eslint-disable-next-line react/prop-types
     // setPlayers(players.filter((player) => player.id !== id));
+    dispatch(deletePlayer(id));
   };
 
   // eslint-disable-next-line no-console

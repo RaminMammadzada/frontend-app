@@ -1,4 +1,4 @@
-import { GET_PLAYERS, EDIT_PLAYER } from "../actions/actions";
+import { GET_PLAYERS, EDIT_PLAYER, DELETE_PLAYER } from "../actions/actions";
 
 const INITIAL_STATE = {
   allPlayers: [],
@@ -21,12 +21,21 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         allPlayers: [
+          ...state.allPlayers,
           {
             id: action.playerId,
             name: action.player.name,
           },
-          ...state.players,
         ],
+        loading: false,
+      };
+    }
+    case DELETE_PLAYER: {
+      return {
+        ...state,
+        allPlayers: state.allPlayers.filter(
+          (plyr) => plyr.id !== action.playerId
+        ),
         loading: false,
       };
     }

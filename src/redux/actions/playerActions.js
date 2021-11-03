@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import axios from "axios";
-import { GET_PLAYERS, EDIT_PLAYER } from "./actions";
+import { GET_PLAYERS, EDIT_PLAYER, DELETE_PLAYER } from "./actions";
 
 export const GetAllPlayers = () => {
   console.log("GetAllPlayers");
@@ -49,5 +49,20 @@ export const EditPlayer = (playerId, player) => {
         playerId,
       });
     });
+  };
+};
+
+export const DeletePlayer = (playerId) => {
+  return (dispatch) => {
+    // eslint-disable-next-line prettier/prettier
+    axios.delete(`http://localhost:3000/player/${playerId}`).then(() => {
+        dispatch({
+          type: DELETE_PLAYER,
+          playerId,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 };

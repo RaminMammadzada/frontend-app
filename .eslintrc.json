@@ -69,7 +69,6 @@
             "error",
             "consistent"
         ],
-        "function-paren-newline": "error",
         "generator-star-spacing": "error",
         "grouped-accessor-pairs": "error",
         "guard-for-in": "error",
