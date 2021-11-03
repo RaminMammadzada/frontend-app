@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Frontend CRUD App: Player Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a single-page frontend application to show the CRUD skills in React
 
-## Available Scripts
+## Screenshot
 
-In the project directory, you can run:
+<!-- ![screenshot](./docs/images/screenshot.png) -->
 
-### `yarn start`
+## Built with the following tech stack
+
+- [Node.js](www.nodejs.org)
+- [npm](https://www.npmjs.com/)
+- [ES6](http://es6-features.org/)
+- [React](https://reactjs.org/)
+- [React-DOM](https://reactjs.org/docs/react-dom.html)
+- [create-react-app](https://github.com/facebook/create-react-app)
+- [React-Redux](https://github.com/reduxjs/react-redux)
+- [Redux](https://github.com/reduxjs/redux)
+- [Redux-thunk](https://github.com/reduxjs/redux-thunk)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+- webpack (create-react-app uses it, didn't set it manually)
+- ESLint
+  - eslint:recommended
+  - plugin:react/recommended,
+  - plugin:prettier/recommended
+- Stylelint
+- Pure CSS
+- [react-bootstrap](https://react-bootstrap.netlify.app/)
+- [boostrap](https://getbootstrap.com/)
+
+### Prerequisites:
+
+Run the API server by clone-ning the [API app](https://github.com/g-loot/frontend-assignment). It must start running in [http://localhost:3001](http://localhost:3001) in the your local machine.
+
+**IMPORTANT NOTE!**
+The following line must be added to the CORS Policy generator in API. The following lines of code in index.js file in API must be updated.
+
+**As Is:**
+
+```
+/* Add CORS-headers to every request */
+function allowCorsMiddleware(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+}
+```
+
+**To Be:**
+
+```
+/* Add CORS-headers to every request */
+function allowCorsMiddleware(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+}
+```
+
+### Setup
+
+Clone the repo by typing
+
+```
+git clone https://github.com/RaminMammadzada/frontend-app.git
+```
+
+Install packages with
+
+```
+  npm install
+```
+
+Start server with:
+
+```
+  npm start
+```
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Unit tests
 
-### `yarn test`
+Testing is not done yet for the project, though after it is done you can type the following command to test.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm run test
 
-### `yarn build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👤 **Ramin Mammadzada**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Github: [@raminmammadzada](https://github.com/raminmammadzada)
+- Twitter: [@raminmammadzada](https://twitter.com/raminmammadzada)
+- Linkedin: [Ramin Mammadzada](https://www.linkedin.com/in/raminmammadzada/)
 
-### `yarn eject`
+### Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Contributions, issues, and feature requests are welcome!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Feel free to check the [issues page](https://github.com/RaminMammadzada/react-redux-SpaceX/issues)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Show your support
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a star if you like this project!

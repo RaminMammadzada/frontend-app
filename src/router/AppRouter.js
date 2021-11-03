@@ -16,7 +16,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <div>
+          <div className="container">
             <Header />
             <div className="main-content">
               <Switch>
