@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import { Form, Button, Alert, FloatingLabel } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 
 const PLAYER_NAME_MAX_LENGTH = 20;
@@ -72,21 +72,31 @@ const PlayerForm = (props) => {
         </Alert>
       )}
 
-      <Form onSubmit={handleOnSubmit}>
-        <Form.Group controlId="name">
-          <Form.Label>Player Name</Form.Label>
-          <Form.Control
-            className="input-control"
-            type="text"
-            name="name"
-            value={name}
-            placeholder="Enter name of player"
-            onChange={handleInputChange}
-          />
+      <Form onSubmit={handleOnSubmit} className="mt-3">
+        <Form.Text className="text-muted">
+          Please fill in the form and press Submit button!
+        </Form.Text>
+        <Form.Group controlId="name" className="my-3">
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Player Name"
+            className="mb-3"
+          >
+            <Form.Control
+              className="input-control"
+              type="text"
+              name="name"
+              value={name}
+              placeholder="Enter name of player"
+              onChange={handleInputChange}
+            />
+          </FloatingLabel>
         </Form.Group>
-        <Button variant="primary" type="submit" className="submit-btn">
-          Submit
-        </Button>
+        <div className="d-flex flex-row-reverse">
+          <Button variant="primary" type="submit" className="submit-btn">
+            Submit
+          </Button>
+        </div>
       </Form>
     </div>
   );

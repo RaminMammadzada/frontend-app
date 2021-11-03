@@ -9,7 +9,7 @@ import {
 import { Table } from "react-bootstrap";
 import Button from "@restart/ui/esm/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faEdit, faEye } from "@fortawesome/free-solid-svg-icons";
 
 // eslint-disable-next-line react/prop-types
 const PlayersList = ({ history }) => {
@@ -52,16 +52,24 @@ const PlayersList = ({ history }) => {
                 <td>{player.name}</td>
                 <td>
                   <Button
+                    className="btn-success"
+                    // eslint-disable-next-line react/prop-types
+                    onClick={() => history.push(`/player/${player.id}`)}
+                  >
+                    <FontAwesomeIcon className="text-white" icon={faEye} />
+                  </Button>{" "}
+                  <Button
+                    className="btn-primary"
                     // eslint-disable-next-line react/prop-types
                     onClick={() => history.push(`/edit/${player.id}`)}
                   >
-                    <FontAwesomeIcon className="text-primary" icon={faEdit} />
+                    <FontAwesomeIcon className="text-white" icon={faEdit} />
                   </Button>{" "}
-                  <Button onClick={() => handleRemovePlayer(player.id)}>
-                    <FontAwesomeIcon
-                      className="text-danger"
-                      icon={faTrashAlt}
-                    />
+                  <Button
+                    className="btn-danger"
+                    onClick={() => handleRemovePlayer(player.id)}
+                  >
+                    <FontAwesomeIcon className="text-white" icon={faTrashAlt} />
                   </Button>
                 </td>
               </tr>
