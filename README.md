@@ -20,19 +20,43 @@ It is a single-page frontend application to show the CRUD skills in React
 - [PropTypes](https://www.npmjs.com/package/prop-types)
 - webpack (create-react-app uses it, didn't set it manually)
 - ESLint
-  - eslint-config-airbnb
-  - eslint-plugin-jsx-a11y
-  - eslint-plugin-react
-  - eslint-plugin-react-hooks
+  - eslint:recommended
+  - plugin:react/recommended,
+  - plugin:prettier/recommended
 - Stylelint
-  - stylelint-config-standard
-  - stylelint-csstree-validator
 - Pure CSS
 - [react-bootstrap](https://react-bootstrap.netlify.app/)
+- [boostrap](https://getbootstrap.com/)
 
 ### Prerequisites:
 
-Run the API server by clone-ning the [API app](https://github.com/g-loot/frontend-assignment)
+Run the API server by clone-ning the [API app](https://github.com/g-loot/frontend-assignment). It must start running in [http://localhost:3001](http://localhost:3001) in the your local machine.
+
+**IMPORTANT NOTE!**
+The following line must be added to the CORS Policy generator in API. The following lines of code in index.js file in API must be updated.
+
+**As Is:**
+
+```
+/* Add CORS-headers to every request */
+function allowCorsMiddleware(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+}
+```
+
+**To Be:**
+
+```
+/* Add CORS-headers to every request */
+function allowCorsMiddleware(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+}
+```
 
 ### Setup
 
@@ -55,7 +79,7 @@ Start server with:
 ```
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 ### Unit tests
 
