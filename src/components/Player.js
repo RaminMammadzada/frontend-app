@@ -8,7 +8,12 @@ const Player = ({ id, name, handleRemovePlayer }) => {
   return (
     <Card style={{ width: "18rem" }} className="book">
       <Card.Body>
-        <Card.Title className="book-title">{name}</Card.Title>
+        <Card.Title
+          onClick={() => history.push(`/player/${id}`)}
+          className="book-title"
+        >
+          {name}
+        </Card.Title>
         <Button variant="primary" onClick={() => history.push(`/edit/${id}`)}>
           Edit
         </Button>{" "}

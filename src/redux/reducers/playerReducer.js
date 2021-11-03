@@ -1,8 +1,14 @@
-import { GET_PLAYERS, EDIT_PLAYER, DELETE_PLAYER } from "../actions/actions";
+import {
+  GET_ALL_PLAYERS,
+  GET_PLAYER,
+  EDIT_PLAYER,
+  DELETE_PLAYER,
+} from "../actions/actions";
 
 const INITIAL_STATE = {
   allPlayers: [],
   loading: false,
+  currentPlayer: null,
 };
 
 // eslint-disable-next-line default-param-last
@@ -10,11 +16,17 @@ export default (state = INITIAL_STATE, action) => {
   //  console.log("player reducer"  , action);
 
   switch (action.type) {
-    case GET_PLAYERS: {
+    case GET_ALL_PLAYERS: {
       return {
         ...state,
         allPlayers: action.players,
         loading: false,
+      };
+    }
+    case GET_PLAYER: {
+      return {
+        ...state,
+        currentPlayer: action.player,
       };
     }
     case EDIT_PLAYER: {

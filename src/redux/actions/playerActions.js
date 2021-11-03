@@ -1,6 +1,11 @@
 /* eslint-disable no-console */
 import axios from "axios";
-import { GET_PLAYERS, EDIT_PLAYER, DELETE_PLAYER } from "./actions";
+import {
+  GET_ALL_PLAYERS,
+  GET_PLAYER,
+  EDIT_PLAYER,
+  DELETE_PLAYER,
+} from "./actions";
 
 export const GetAllPlayers = () => {
   console.log("GetAllPlayers");
@@ -9,10 +14,23 @@ export const GetAllPlayers = () => {
     console.log("GetPlayers dispatch");
 
     axios.get(`http://localhost:3000/players`).then((res) => {
-      console.log("I am here: ", res);
       dispatch({
-        type: GET_PLAYERS,
+        type: GET_ALL_PLAYERS,
         players: res.data,
+      });
+    });
+  };
+};
+
+export const GetPlayer = (playerId) => {
+  console.log("GetPlayer");
+
+  return (dispatch) => {
+    console.log("GetPlayer dispatch");
+    axios.get(`http://localhost:3000/player/${playerId}`).then((res) => {
+      dispatch({
+        type: GET_PLAYER,
+        player: res.data,
       });
     });
   };
@@ -27,7 +45,7 @@ export const AddPlayer = (playerId, player) => {
         axios.get(`http://localhost:3000/players`).then((res) => {
           console.log(res);
           dispatch({
-            type: GET_PLAYERS,
+            type: GET_ALL_PLAYERS,
             players: res.data,
           });
         });
