@@ -3,53 +3,37 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import AddPlayer from "../components/AddPlayer";
 import Header from "../components/Header";
 import PlayersList from "../components/PlayersList";
+import PlayerDetails from "../components/PlayerDetails";
 import EditPlayer from "../components/EditPlayer";
-import useLocalStorage from "../customHooks/useLocalStorage";
+import configureStore from "../redux/store/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+
+const { store, persistor } = configureStore();
 
 const AppRouter = () => {
-  const [players, setPlayers] = useLocalStorage("players", []);
-
   return (
     <BrowserRouter>
-      <div>
-        <Header />
-        <div className="main-content">
-          <Switch>
-            <Route
-              render={(props) => (
-                <PlayersList
-                  {...props}
-                  players={players}
-                  setPlayers={setPlayers}
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <div>
+            <Header />
+            <div className="main-content">
+              <Switch>
+                <Route component={PlayersList} path="/" exact={true} />
+                <Route component={AddPlayer} path="/add" exact={true} />
+                <Route component={EditPlayer} path="/edit/:id" exact={true} />
+                <Route
+                  component={PlayerDetails}
+                  path="/player/:id"
+                  exact={true}
                 />
-              )}
-              path="/"
-              exact={true}
-            />
-            <Route
-              render={(props) => (
-                <AddPlayer
-                  {...props}
-                  players={players}
-                  setPlayers={setPlayers}
-                />
-              )}
-              path="/add"
-            />
-            <Route
-              render={(props) => (
-                <EditPlayer
-                  {...props}
-                  players={players}
-                  setPlayers={setPlayers}
-                />
-              )}
-              path="/edit/:id"
-            />
-            <Route component={() => <Redirect to="/" />} />
-          </Switch>
-        </div>
-      </div>
+                <Route component={() => <Redirect to="/" />} />
+              </Switch>
+            </div>
+          </div>
+        </PersistGate>
+      </Provider>
     </BrowserRouter>
   );
 };

@@ -21,3 +21,10 @@ body {
   text-transform: uppercase;
   border-bottom: 2px solid transparent;
 }
+
+.errorMessage {
+  font-size: 1.3rem;
+  color: aliceblue;
+  background:rgb(231, 92, 115);
+  padding: 0.3rem
+}

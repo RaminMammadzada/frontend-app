@@ -1,10 +1,14 @@
 import React from "react";
 import PlayerForm from "./PlayerForm";
+import { AddPlayer as addPlayer } from "../redux/actions/playerActions";
+import { useDispatch } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
-const AddPlayer = ({ history, players, setPlayers }) => {
+const AddPlayer = ({ history }) => {
+  const dispatch = useDispatch();
+
   const handleOnSubmit = (player) => {
-    setPlayers([player, ...players]);
+    dispatch(addPlayer(player.id, { name: player.name }));
     // eslint-disable-next-line react/prop-types
     history.push("/");
   };

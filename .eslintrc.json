@@ -52,7 +52,6 @@
         "default-case": "error",
         "default-case-last": "error",
         "default-param-last": "error",
-        "dot-location": "error",
         "dot-notation": "error",
         "eol-last": "error",
         "eqeqeq": "error",
@@ -70,7 +69,6 @@
             "error",
             "consistent"
         ],
-        "function-paren-newline": "error",
         "generator-star-spacing": "error",
         "grouped-accessor-pairs": "error",
         "guard-for-in": "error",
@@ -78,7 +76,6 @@
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
         "indent": "off",
-        "init-declarations": "error",
         "jsx-quotes": [
             "error",
             "prefer-double"
@@ -109,7 +106,6 @@
             "error",
             "separate-lines"
         ],
-        "new-cap": "error",
         "new-parens": "error",
         "newline-per-chained-call": "error",
         "no-alert": "error",
@@ -118,7 +114,7 @@
         "no-bitwise": "error",
         "no-caller": "error",
         "no-confusing-arrow": "error",
-        "no-console": "error",
+        // "no-console": "error",
         "no-constructor-return": "error",
         "no-continue": "error",
         "no-div-regex": "error",
@@ -177,7 +173,6 @@
         "no-trailing-spaces": "error",
         "no-undef-init": "error",
         "no-undefined": "error",
-        "no-underscore-dangle": "error",
         "no-unmodified-loop-condition": "error",
         "no-unneeded-ternary": "error",
         "no-unreachable-loop": "error",
