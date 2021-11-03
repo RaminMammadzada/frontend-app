@@ -34,7 +34,7 @@ export const AddPlayer = (playerId, player) => {
     // eslint-disable-next-line prettier/prettier
     axios
       .post(`http://localhost:3000/player`, player)
-      .then((response) => {
+      .then(() => {
         axios.get(`http://localhost:3000/players`).then((res) => {
           dispatch({
             type: GET_ALL_PLAYERS,
