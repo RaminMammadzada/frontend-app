@@ -1,4 +1,4 @@
-import { GET_PLAYERS } from "../actions/actions";
+import { GET_PLAYERS, EDIT_PLAYER } from "../actions/actions";
 
 const INITIAL_STATE = {
   allPlayers: [],
@@ -14,6 +14,19 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         allPlayers: action.players,
+        loading: false,
+      };
+    }
+    case EDIT_PLAYER: {
+      return {
+        ...state,
+        allPlayers: [
+          {
+            id: action.playerId,
+            name: action.player.name,
+          },
+          ...state.players,
+        ],
         loading: false,
       };
     }

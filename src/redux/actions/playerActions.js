@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import axios from "axios";
-import { GET_PLAYERS } from "./actions";
+import { GET_PLAYERS, EDIT_PLAYER } from "./actions";
 
 export const GetAllPlayers = () => {
   console.log("GetAllPlayers");
@@ -35,5 +35,19 @@ export const AddPlayer = (playerId, player) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+};
+
+export const EditPlayer = (playerId, player) => {
+  return (dispatch) => {
+    console.log("playerId and params: ", [playerId, player]);
+    // eslint-disable-next-line prettier/prettier
+    axios.put(`http://localhost:3000/player/${playerId}`, player).then(() => {
+      dispatch({
+        type: EDIT_PLAYER,
+        player,
+        playerId,
+      });
+    });
   };
 };
