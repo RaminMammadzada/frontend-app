@@ -49,7 +49,15 @@ const PlayersList = ({ history }) => {
               <tr key={player.id}>
                 <td>{index + 1}</td>
                 <td>{`${player.id.slice(0, 7)}.....${player.id.slice(-4)}`}</td>
-                <td>{player.name}</td>
+                <td>
+                  <a
+                    className="btn"
+                    // eslint-disable-next-line react/prop-types
+                    onClick={() => history.push(`/player/${player.id}`)}
+                  >
+                    {player.name}
+                  </a>
+                </td>
                 <td>
                   <Button
                     className="btn-success"

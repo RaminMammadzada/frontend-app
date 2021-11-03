@@ -65,7 +65,7 @@ const PlayerForm = (props) => {
   };
 
   return (
-    <div className="main-form">
+    <div className="player-form">
       {errorMsg && (
         <Alert key={0} variant={"danger"}>
           {errorMsg}
@@ -92,7 +92,7 @@ const PlayerForm = (props) => {
             />
           </FloatingLabel>
         </Form.Group>
-        <div className="d-flex flex-row-reverse">
+        <div className="d-flex justify-content-center">
           <Button variant="primary" type="submit" className="submit-btn">
             Submit
           </Button>

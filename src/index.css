@@ -1,4 +1,12 @@
 body {
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
   display: flex;
   justify-content:center;
   align-items: center;
@@ -6,4 +14,27 @@ body {
 
 .header {
   border-bottom: 1px
+}
+
+.link {
+  text-decoration: none;
+  background-color: rgb(53, 53, 53);
+  color: rgb(211, 211, 211);
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 1rem;
+}
+
+.link:hover {
+  color:rgb(255, 255, 255);
+  background-color: rgb(83, 83, 83);
+}
+
+.player-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

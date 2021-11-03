@@ -18,7 +18,7 @@ const PlayerDetails = ({ history }) => {
   }, []);
 
   return (
-    <div>
+    <div className="d-flex justify-content-center mt-5">
       <Card style={{ width: "25rem" }} className="book">
         <Card.Body>
           <Card.Title
