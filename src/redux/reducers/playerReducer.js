@@ -1,18 +1,19 @@
 import { GET_PLAYERS } from "../actions/actions";
 
 const INITIAL_STATE = {
-  Players: [],
+  allPlayers: [],
   loading: false,
 };
 
-export default (action, state = INITIAL_STATE) => {
+// eslint-disable-next-line default-param-last
+export default (state = INITIAL_STATE, action) => {
   //  console.log("player reducer"  , action);
 
   switch (action.type) {
     case GET_PLAYERS: {
       return {
         ...state,
-        Players: action.players,
+        allPlayers: action.players,
         loading: false,
       };
     }

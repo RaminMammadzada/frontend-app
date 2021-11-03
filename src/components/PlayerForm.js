@@ -29,7 +29,6 @@ const PlayerForm = (props) => {
       const currentPlayer = {
         id: uuidv4(),
         name,
-        date: new Date(),
       };
       props.handleOnSubmit(currentPlayer);
     } else {
