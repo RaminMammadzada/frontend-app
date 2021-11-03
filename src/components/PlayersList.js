@@ -22,14 +22,9 @@ const PlayersList = ({ history }) => {
   }, []);
 
   const handleRemovePlayer = (id) => {
-    console.log(`User with id: ${id} is about to be deleted.`);
     // eslint-disable-next-line react/prop-types
-    // setPlayers(players.filter((player) => player.id !== id));
     dispatch(deletePlayer(id));
   };
-
-  // eslint-disable-next-line no-console
-  console.log("players: ", players);
 
   return (
     <React.Fragment>
