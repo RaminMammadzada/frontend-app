@@ -1,5 +1,5 @@
 import React from "react";
-import PlayerForm from "./PlayerForm";
+import PlayerForm from "./forms/PlayerForm";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { EditPlayer as editPlayer } from "../redux/actions/playerActions";

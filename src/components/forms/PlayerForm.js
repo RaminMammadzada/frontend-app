@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 
 const PLAYER_NAME_MAX_LENGTH = 20;
@@ -66,7 +66,12 @@ const PlayerForm = (props) => {
 
   return (
     <div className="main-form">
-      {errorMsg && <p className="errorMessage">{errorMsg}</p>}
+      {errorMsg && (
+        <Alert key={0} variant={"danger"}>
+          {errorMsg}
+        </Alert>
+      )}
+
       <Form onSubmit={handleOnSubmit}>
         <Form.Group controlId="name">
           <Form.Label>Player Name</Form.Label>

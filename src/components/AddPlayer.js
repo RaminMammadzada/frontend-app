@@ -1,5 +1,5 @@
 import React from "react";
-import PlayerForm from "./PlayerForm";
+import PlayerForm from "./forms/PlayerForm";
 import { AddPlayer as addPlayer } from "../redux/actions/playerActions";
 import { useDispatch } from "react-redux";
 

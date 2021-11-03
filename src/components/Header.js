@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => (
-  <header className="header">
+  <header className="">
     <h1>Players Management Admin</h1>
     <div className="navlinks">
       <NavLink to="/" className="link" activeClassName="active" exact>

@@ -7,24 +7,3 @@ body {
 .header {
   border-bottom: 1px
 }
-
-.navlinks {
-
-}
-
-.link {
-  padding: 5px 10px;
-  font-weight: 100;
-  margin: 1rem;
-  color: rgb(47, 27, 102);
-  text-decoration: none;
-  text-transform: uppercase;
-  border-bottom: 2px solid transparent;
-}
-
-.errorMessage {
-  font-size: 1.3rem;
-  color: aliceblue;
-  background:rgb(231, 92, 115);
-  padding: 0.3rem
-}
