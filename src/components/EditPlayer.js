@@ -22,7 +22,6 @@ const EditPlayer = ({ history }) => {
 
   return (
     <div>
-      <p>Edit Player with id {id} </p>
       <PlayerForm player={playerToEdit} handleOnSubmit={handleOnSubmit} />
     </div>
   );
