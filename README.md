@@ -2,10 +2,6 @@
 
 It is a single-page frontend application to show the CRUD skills in React
 
-## Screenshot
-
-<!-- ![screenshot](./docs/images/screenshot.png) -->
-
 ## Built with the following tech stack
 
 - [Node.js](www.nodejs.org)
@@ -30,7 +26,7 @@ It is a single-page frontend application to show the CRUD skills in React
 
 ### Prerequisites:
 
-Run the API server by clone-ning the [API server](https://github.com/g-loot/frontend-assignment). It must start running in [http://localhost:3000](http://localhost:3000) in the your local machine.
+Run the API server by cloning the [API server](https://github.com/g-loot/frontend-assignment). It must start running in [http://localhost:3000](http://localhost:3000) in the your local machine.
 
 **IMPORTANT NOTE!**
 The following line must be added to the CORS Policy generator in API. The following lines of code in index.js file in API must be updated.
